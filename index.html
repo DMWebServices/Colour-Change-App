@@ -1,46 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coulor Change App</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Colour Change App</title>
 
-    <!-- FontAwesome CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    
-    <!-- Google CSS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    
-    <!-- Normalise CSS -->
-    <link rel="stylesheet" href="assets/css/normalise.css">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+  <!-- FontAwesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet" />
+  
+  <!-- Normalize CSS -->
+  <link rel="stylesheet" href="assets/css/normalize.css" />
 
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
+
+  <main id="change-color" class="color-app" role="main" aria-label="Color changer application">
+    <header class="app-header">
+      <h1 class="app-title">Press to <br>change colour</h1>
+    </header>
+
+    <section class="app-controls">
+      <!-- Generate Color Button -->
+      <button id="change-color-btn" class="btn change-btn" aria-label="Generate a random background color">
+        Change Colour
+      </button>
+
+      <!-- Color Display Output -->
+      <div class="output-group">
+            <p id="out-put" class="color-output" aria-live="polite"></p>
+
+            <!-- Copy Color Button -->
+            <button id="copy-color" class="btn copy-btn tooltip" data-tooltip="Copy Colour">
+                <i class="fa-solid fa-copy" aria-hidden="true"></i>
+            </button>            
+        </div>
+        <p id="success-copied-text" class="copied-text">Copied Colour</p>
+    </section>
+
+    <!-- Optional: Color History -->
     
-    <main id="change-color" class="change-color-container" role="main" aria-label="Color changer application">
-        <div class="change-color-inner-container">
-            <h1 class="change-color-title">Press to <br />change colour</h1>
-            <!--Colour Change Btn -->
-            <button id="change-color" class="change-color-btn" aria-label="Generate a random background color">Change Colour</button>
+    <section class="color-history-section" aria-label="Previous colors used">
+      <ul id="color-history" class="color-history-list"></ul>
+    </section> 
+   
 
-            <!-- Copy to clipboard Btn -->
-            <button id="copy-color" class="copy-btn tooltip" aria-label="Copy the current background color value"><i class="fa-solid fa-file" aria-hidden="true"></i>
-                Copy Colour<span class="tooltiptext" role="tooltip">Copy Colour</span>
-            </button>
-            
-            <!-- Colour Output -->
-            <p id="out-put" class="color-out-put" aria-live="polite"></p>
+  </main>
 
-            <!-- Colour History -->
-            <ul id="color-history" aria-label="Color history list" class="color-history-container"></ul>
-        </div>    
-    </main>
-
-    <script src="assets/js/app.js"></script>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
