@@ -22,15 +22,24 @@
 </head>
 <body>
     
-    <div class="change-color">
-        <h1>Press to change colour</h1>
-        <button id="change-bk-color">Change Colour</button>
-        <button id="copy-color" class="tooltip"><i class="fa-solid fa-file"></i>
-            Copy Text<span class="tooltiptext">Copy Text</span>
-        </button>
-        
-        <p id="out-put"></p>
-    </div>
+    <main id="change-color" class="change-color-container" role="main" aria-label="Color changer application">
+        <div class="change-color-inner-container">
+            <h1 class="change-color-title">Press to <br />change colour</h1>
+            <!--Colour Change Btn -->
+            <button id="change-color" class="change-color-btn" aria-label="Generate a random background color">Change Colour</button>
+
+            <!-- Copy to clipboard Btn -->
+            <button id="copy-color" class="copy-btn tooltip" aria-label="Copy the current background color value"><i class="fa-solid fa-file" aria-hidden="true"></i>
+                Copy Colour<span class="tooltiptext" role="tooltip">Copy Colour</span>
+            </button>
+            
+            <!-- Colour Output -->
+            <p id="out-put" class="color-out-put" aria-live="polite"></p>
+
+            <!-- Colour History -->
+            <ul id="color-history" aria-label="Color history list" class="color-history-container"></ul>
+        </div>    
+    </main>
 
     <script src="assets/js/app.js"></script>
 </body>
